@@ -4,14 +4,15 @@
 
 export const environment = {
   production: false,
-  hostUrl: "https://localhost:7039/",
-  apiUrl: "https://localhost:7039/api/",
-  imgUrl: "https://localhost:7039/upload/",
-  devTest:"main env",
-  loginUrl: "https://liencare.auth.ap-south-1.amazoncognito.com/oauth2/authorize?client_id=5vmrmds1qbn0s3tmkq5j4g76gh&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Flocalhost%3A4200/login",
-  logoutUrl: "https://liencare.auth.ap-south-1.amazoncognito.com/logout?client_id=5vmrmds1qbn0s3tmkq5j4g76gh&logout_uri=https://localhost:4200/logout",
-  changePassword:'https://liencare.auth.ap-south-1.amazoncognito.com/forgotPassword?client_id=5vmrmds1qbn0s3tmkq5j4g76gh&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Flocalhost%3A4200/login',
-};
+  firebaseConfig : {
+    apiKey: "AIzaSyBTLNdIETmZ9QiW_IW89KAYctwhhQxYRSg",
+    authDomain: "student-management-syste-18b0e.firebaseapp.com",
+    projectId: "student-management-syste-18b0e",
+    storageBucket: "student-management-syste-18b0e.appspot.com",
+    messagingSenderId: "1041584090735",
+    appId: "1:1041584090735:web:0fa251a948652b41cfe79a"
+  }
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
