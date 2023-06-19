@@ -1,12 +1,10 @@
-<div class="content">
-    <span>
-        soumit-angular app is running!
-    </span>
+<div class="container container-table">
+  <a class="mx-2" href="#" routerLink="/login">Login</a>
+  <a class="mx-2" href="#" routerLink="/home">Home</a>
+  <a class="mx-2" href="#" routerLink="/dashboard">Dashboard</a>
+  <a class="mx-2" href="#" routerLink="/todo">TODO</a>
+  <a class="mx-2" href="#" routerLink="/todo_list">TODO LIST</a>
+  <a class="mx-2" href="#" routerLink="/product">Product</a>
+  <a class="mx-2" href="#" (click)="logout()">Logout</a>
+  <router-outlet></router-outlet>
 </div>
-<h1 class="container">This Soumi</h1>
-<a class="mx-2" href="#" routerLink="/home">Home</a>
-<a class="mx-2" href="#" routerLink="/todo">TODO</a>
-<a class="mx-2" href="#" routerLink="/todo_list">TODO LIST</a>
-<a class="mx-2" href="#" routerLink="/product">Product</a>
-
-<router-outlet></router-outlet>
