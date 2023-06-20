@@ -1,1 +1,131 @@
-<p>dashboard works!</p>
+<mat-card class="mt-4">
+  <mat-card-header>
+    <mat-card-title
+      ><h4 class="text-dark text-muted fw-bold">Dashboard</h4></mat-card-title
+    >
+    <mat-card-subtitle>
+      <div *ngIf="story == 1">
+        <img src="/assets/images/1.jpg" width="145" height="145" alt="image" />
+        <p>
+          Once upon a time, there lived a proud and naughty elephant in a
+          jungle. It treated all creatures smaller than itself harshly and was
+          very rude to them. One day, the ant family set out on their daily hunt
+          for food. On their way, they met the elephant who had a naughty idea
+          and decided to cause the ant family trouble.
+        </p>
+        <p>
+          Suddenly, it sprayed the ants with water. The ants became very angry
+          and one of them cried, “This is wrong! You cannot harm others like
+          this.” The rude elephant replied, “You silly ant! I will crush you
+          under my foot if you speak again.” The clever ant then decided to
+          teach the elephant a lesson so that it learns to respect every
+          creature.
+        </p>
+
+        <p>
+          The tiny ant quietly crept inside the elephant’s trunk and started
+          biting it. The elephant jumped and blowed its trunk to get rid of the
+          ant but it did not stop. The big elephant kept crying in pain.
+          Finally, it said “I am sorry. I have realised my mistake. I promise I
+          will be good and not trouble anyone.” The ant then stopped biting it
+          and came out. The elephant had learnt a lesson and was good to
+          everyone thereafter. The elephant and the ant became great friends.
+        </p>
+      </div>
+      <div *ngIf="story == 2">
+        <img src="/assets/images/2.jpg" width="145" height="145" alt="image" />
+        <p>
+          The Little Giraffe is an endearing folk-tale from Africa, retelling
+          the remarkable story of how the world’s first ‘little’ giraffe became
+          tall! The Little Giraffe and his best friend Rhino are very, very
+          hungry. What happens next changes their lives forever. The story is
+          that of a little Giraffe, who happens to be the world’s Giraffe! He is
+          a little Giraffe and does not have a long neck and long legs. Together
+          with his best friend Rhino he goes around the dry, parched and of the
+          forest looking for food. But the harsh sun makes it difficult for
+          anything to grow. The two friends remain hungry and sad.
+        </p>
+        <p>
+          One day the two friends decide to go the wise old man in the village
+          and seek his help. The wise old man asks them to visit him the next
+          day and promises to brew up a magic drink for him. The next day,
+          however, only the Giraffe lands up at the old man’s door. The old man
+          gives the bowl of magic drink to the Giraffe. As he finishes drinking
+          it, the little Giraffe begins to grow. His neck grows longer and his
+          legs grow taller. And very soon, he resembles the Giraffe we all know
+          of! The old man tells him that now the Giraffe can reach up to the
+          leaves up high in the trees. Now he won’t have to go hungry any more!
+        </p>
+
+        <p>
+          When the Rhino meets the Giraffe he asks him what happened! The
+          Giraffe tells him about the magic drink and that there is none of it
+          left! The Rhino is left eating the dry grass. He is furious with the
+          wise old man, his friend the ‘not-so-little’ Giraffe and even with
+          himself!
+        </p>
+        <p>And that’s the reason why he is still very angry today!</p>
+      </div>
+      <div *ngIf="story == 3">
+        <img src="/assets/images/3.png" width="145" height="145" alt="image" />
+        <p>
+          The baby bear followed his mama. Mama bear walked through the woods.
+          She was looking for berries to eat. She found some black berries. She
+          started eating them. The baby started eating them, too. They ate all
+          the berries. Baby bear was full. Mama bear was still hungry. She
+          started walking again. She wanted to find more berries to eat. Baby
+          bear lay down. He was full. He wanted to take a nap. But mama bear
+          came back. She growled at baby bear. He understood mama’s growl. When
+          mama growled, he obeyed. He got up and followed his mama. Someday he
+          would take a nap after a meal. A squirrel ran up a tree with a nut. It
+          dropped the nut and ran back down to the ground. It picked up the nut
+          and looked at baby bear. Then it ran back up the tree. Baby bear did
+          not like nuts. They were too hard to open.
+        </p>
+      </div>
+      <div *ngIf="story == 4">
+        <img src="/assets/images/4.png" width="145" height="145" alt="image" />
+        <p>
+          Once upon a time, in a faraway jungle, there lived a Papa Lion with
+          his son, a cute and cuddly Little baby Lion. Papa Lion loved him very
+          much. But he was also very worried. The baby Lion had still not learnt
+          to roar. For that matter he could not even growl.
+        </p>
+        <p>
+          One day Papa Lion decided to appoint a tutor to teach his son how to
+          roar. He asked Jackknife, the Jackal, to be his son’s tutor. The next
+          morning Mr. Jackknife bathed, shaved, dressed up smartly and came over
+          to the lion’s cave. The baby Lion had never seen such an interesting
+          tutor.
+        </p>
+
+        <p>Mr. Jackknife opened the lesson. “This is how to do it,” he said,</p>
+
+        <p>
+          “Watch me.” He turned towards the sky and whined “ooo-woo, oooh-wooo”.
+        </p>
+
+        <p>“Ooo-wooo, Oooh-wooo”, said the baby Lion. That was simple.</p>
+
+        <p>
+          They both went proudly over to Papa Lion. Papa Lion asked his son:
+          “What have you learnt?”
+        </p>
+
+        <p>
+          The baby Lion turned towards the sky and said, “Ooo-wooo, Wooo-Oooh.”
+        </p>
+
+        <p>
+          Papa Lion became furious. “You call that a roar?” he asked and roared
+          angrily.
+        </p>
+        <p>Mr. Jackknife was terribly frightened and ran away.</p>
+      </div>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button (click)="refreshStory()">Refresh</button>
+  </mat-card-actions>
+</mat-card>

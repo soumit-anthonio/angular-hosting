@@ -1,10 +1,28 @@
-<div class="container container-table">
-  <a class="mx-2" href="#" routerLink="/login">Login</a>
-  <a class="mx-2" href="#" routerLink="/home">Home</a>
-  <a class="mx-2" href="#" routerLink="/dashboard">Dashboard</a>
-  <a class="mx-2" href="#" routerLink="/todo">TODO</a>
-  <a class="mx-2" href="#" routerLink="/todo_list">TODO LIST</a>
-  <a class="mx-2" href="#" routerLink="/product">Product</a>
-  <a class="mx-2" href="#" (click)="logout()">Logout</a>
+<div class="container container-table col-center">
+  <button mat-button routerLink="/login">
+    <span class="fw-bold">Login</span>
+  </button>
+  <button mat-button routerLink="/home">
+    <span class="fw-bold">Home</span>
+  </button>
+  <button mat-button routerLink="/dashboard">
+    <span class="fw-bold">Dashboard</span>
+  </button>
+  <button mat-button routerLink="/todo">
+    <span class="fw-bold">TODO</span>
+  </button>
+  <button mat-button routerLink="/todo_list">
+    <span class="fw-bold">TODO LIST</span>
+  </button>
+  <button mat-button routerLink="/product">
+    <span class="fw-bold">Product</span>
+  </button>
+  <button
+    mat-button
+    (click)="logout()"
+    style="float: right; position: relative; right: -28px"
+  >
+    <span class="fw-bold"><fa-icon [icon]="logoutLogo"></fa-icon></span>
+  </button>
   <router-outlet></router-outlet>
 </div>

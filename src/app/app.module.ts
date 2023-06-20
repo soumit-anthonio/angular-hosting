@@ -13,23 +13,23 @@ import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatFormFieldModule } from '@angular/material/form-field'; 
-import { MatDatepickerModule } from '@angular/material/datepicker'; 
-import { MatNativeDateModule } from '@angular/material/core'; 
-import { MatInputModule } from '@angular/material/input'; 
-import { MatDialogModule } from '@angular/material/dialog'; 
-import { MatButtonModule } from '@angular/material/button'; 
-import { MatButtonToggleModule } from '@angular/material/button-toggle'; 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ProductModule } from './my-components/product/product.module';
-
-
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,15 +46,18 @@ import { ProductModule } from './my-components/product/product.module';
     FormsModule,
     ProductModule,
     BrowserAnimationsModule,
-    MatFormFieldModule, 
-    MatDatepickerModule, 
-    MatNativeDateModule, 
-    MatInputModule, 
-    MatDialogModule, 
-    MatButtonModule, 
-    MatButtonToggleModule, 
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatButtonToggleModule,
     AppRoutingModule,
-    HttpClientModule,FontAwesomeModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    MatMenuModule,
+    MatCardModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideDatabase(() => getDatabase()),
