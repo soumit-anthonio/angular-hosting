@@ -2,14 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, of, map, filter } from 'rxjs';
 //import { environment } from 'src/environments/environment';
+import { Database, set, ref, update } from '@angular/fire/database';
+import { UUID } from 'angular2-uuid';
 
-const API_LOGOUT_URL = "https://www.google.com";
+const API_LOGOUT_URL = 'https://www.google.com';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SoumitService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private fbdb: Database) {}
 
   users = [
     { id: 1, name: 'John', isActive: true },
@@ -42,16 +44,32 @@ export class SoumitService {
     return this.http.get(`${API_LOGOUT_URL}`);
   }
 
-// forkJoin to call parallel call.
+  // forkJoin to call parallel call.
 
+  //mergeMap
+  // mergeMap executes reandomly when any response comes it will show that.
+  //concatMap
+  // Concatmap executes one after another when first finish then second start
+  //switchmap  (we use this in autocomplete)
+  // switchMap will discard all the revious calls and accept only the last call.
+  // exhaustMap
+  // exhaustMap will execute the first one and the same execution if second response come then it will discard the second. It will only accept the response when no other response come.
 
+  ///////////FIREBASE DATABASE////////////////
 
-//mergeMap
-// mergeMap executes reandomly when any response comes it will show that.
-//concatMap
-// Concatmap executes one after another when first finish then second start
-//switchmap  (we use this in autocomplete)
-// switchMap will discard all the revious calls and accept only the last call.
-// exhaustMap 
-// exhaustMap will execute the first one and the same execution if second response come then it will discard the second. It will only accept the response when no other response come.
+  insertData(
+    uname: String,
+    eventname: String,
+    amount: number,
+    when: Date | null
+  ) {
+    debugger;
+    set(ref(this.fbdb, 'users/' + UUID.UUID()), {
+      username: uname,
+      eventname: eventname,
+      amount: amount,
+      when: (when!=null)?when.toDateString():null,
+    });
+    alert('user created.');
+  }
 }

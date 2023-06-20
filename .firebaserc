@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "student-management-syste-18b0e": {
+      "hosting": {
+        "soumit-angular": [
+          "student-management-syste-18b0e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "student-management-syste-18b0e"
+  }
+}
