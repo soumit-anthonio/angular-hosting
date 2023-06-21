@@ -7,7 +7,7 @@ import { SoumitBaseService } from 'src/app/services/soumitbaseservice';
 import { SoumitService } from 'src/app/services/soumit.service';
 import { FormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -16,12 +16,16 @@ import { MatInputModule } from '@angular/material/input';
 
 const productRoutes: Routes = [{ path: '', component: ProductComponent }];
 @NgModule({
-  declarations: [ProductComponent, ColorDirective,],
+  declarations: [ProductComponent, ColorDirective],
   imports: [
     CommonModule,
     FormsModule,
     MatDialogModule,
-    MatButtonModule,MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatButtonToggleModule,
     RouterModule.forChild(productRoutes),
   ],

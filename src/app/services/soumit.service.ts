@@ -57,19 +57,20 @@ export class SoumitService {
 
   ///////////FIREBASE DATABASE////////////////
 
-  insertData(
+  public insertData(
     uname: String,
     eventname: String,
     amount: number,
     when: Date | null
-  ) {
-    debugger;
+  ): Observable<any> {
     set(ref(this.fbdb, 'users/' + UUID.UUID()), {
       username: uname,
       eventname: eventname,
       amount: amount,
-      when: (when!=null)?when.toDateString():null,
+      when: when != null ? when.toDateString() : null,
     });
-    alert('user created.');
+    return of({
+      statusCode: 200,
+    });
   }
 }

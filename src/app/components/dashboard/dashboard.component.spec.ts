@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardComponent } from './dashboard.component';
+import { MatCardModule } from '@angular/material/card';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -8,6 +9,7 @@ describe('DashboardComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [MatCardModule],
       declarations: [DashboardComponent]
     });
     fixture = TestBed.createComponent(DashboardComponent);
@@ -18,4 +20,5 @@ describe('DashboardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

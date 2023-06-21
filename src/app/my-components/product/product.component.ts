@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
-import { SoumitBaseService } from 'src/app/services/soumitbaseservice';
+import { SoumitService } from 'src/app/services/soumit.service';
 
 @Component({
   selector: 'app-product',
@@ -12,8 +12,11 @@ export class ProductComponent implements OnInit {
   uname: string = '';
   eventname: string = '';
   amount: number = 0;
+  count: number = 0;
+  config: object = {};
+  data: any;
   when: Date | null = new Date();
-  constructor(private _soumitBService: SoumitBaseService) {}
+  constructor(private _soumitBService: SoumitService) {}
   ngOnInit(): void {}
 
   display() {
@@ -22,7 +25,21 @@ export class ProductComponent implements OnInit {
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     this.when = event.value;
   }
+  saveConfigLocally(param: object) {
+    this.config = param;
+  }
+  calculate(a: number, b: number) {
+    this.count = a * b + 100;
+    return this.count;
+  }
+
   addClicked() {
+    debugger;
+    let req_params = {
+      count: this.calculate(10, 10),
+      name: 'sam',
+    };
+    this.saveConfigLocally(req_params);
     if (this.uname == '') {
       alert('Please enter Name');
       return;
@@ -39,11 +56,19 @@ export class ProductComponent implements OnInit {
       alert('Please enter When');
       return;
     }
-    this._soumitBService.insertData(this.uname, this.eventname, this.amount,this.when);
-    this.resetControl();
+    debugger;
+    this._soumitBService
+      .insertData(this.uname, this.eventname, this.amount, this.when)
+      .subscribe((response: any) => {
+        console.log(response);
+        debugger;
+        this.data = response;
+        alert('Data created'+this.uname);
+        this.resetControl();
+      });
   }
 
-  private resetControl(){
+  resetControl() {
     this.uname = '';
     this.eventname = '';
     this.amount = 0;

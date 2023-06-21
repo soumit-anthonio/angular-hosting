@@ -30,6 +30,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ProductModule } from './my-components/product/product.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+// import { SoumitBaseService } from './services/soumitbaseservice';
 @NgModule({
   declarations: [
     AppComponent,
