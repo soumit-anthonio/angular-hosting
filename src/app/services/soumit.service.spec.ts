@@ -1,15 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 
 import { SoumitService } from './soumit.service';
-import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { DatabaseModule } from '@angular/fire/database';
+import { SoumitBaseService } from './soumitbaseservice';
+import { ProductComponent } from '../my-components/product/product.component';
 
 describe('SoumitService', () => {
   let service: SoumitService;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-      providers: [SoumitService],
+      imports: [HttpClientModule,DatabaseModule],
+      providers: [SoumitService,SoumitBaseService,{ provide: ProductComponent, useValue: {}}],
     });
     service = TestBed.get(SoumitService);
   });

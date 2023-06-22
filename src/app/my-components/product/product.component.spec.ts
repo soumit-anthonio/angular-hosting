@@ -3,25 +3,34 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { ProductComponent } from './product.component';
 import { of } from 'rxjs';
 import { SoumitService } from 'src/app/services/soumit.service';
-import { SoumitBaseService } from 'src/app/services/soumitbaseservice';
 
 describe('ProductComponent', () => {
   let component: ProductComponent;
   let fixture: ComponentFixture<ProductComponent>;
-  beforeEach((() => {
+  //fixture.debugElement.injector.get(SoumitBaseService);
+  // let service = TestBed.inject(SoumitService);
+  let service: SoumitService;
+  beforeEach(async(() => {
+    // Create jasmine spy object
+    // Provide the dummy/mock data to sortNumberData method.
+    let sortServiceSpy = jasmine.createSpyObj('SoumitService', [
+      'insertData',
+      'getRules',
+      'OnPing',
+    ]);
+    sortServiceSpy.insertData.returnValue({
+      statusCode: 200,
+    });
     TestBed.configureTestingModule({
-      imports: [],
-      declarations: [ProductComponent],
-    }).compileComponents();
+      providers: [{ provide: SoumitService, useValue: sortServiceSpy }],
+    });
+    service = TestBed.inject(SoumitService);
   }));
-
   // beforeEach(() => {
   //   TestBed.configureTestingModule({
+  //     imports: [],
   //     declarations: [ProductComponent],
-  //   });
-  //   fixture = TestBed.createComponent(ProductComponent);
-  //   component = fixture.componentInstance;
-  //   fixture.detectChanges();
+  //   }).compileComponents();
   // });
 
   it('should create the product', () => {
@@ -36,7 +45,6 @@ describe('ProductComponent', () => {
     spyOn(app, 'calculate').and.returnValue(1000);
     spyOn(app, 'saveConfigLocally').and.stub();
     spyOn(app, 'resetControl').and.stub();
-    let service = TestBed.inject(SoumitService)//fixture.debugElement.injector.get(SoumitBaseService);
     spyOn(service, 'insertData').and.callFake(() => {
       return of({
         statusCode: 200,

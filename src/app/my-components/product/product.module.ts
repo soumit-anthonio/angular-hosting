@@ -3,7 +3,6 @@ import { ProductComponent } from './product.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ColorDirective } from 'src/app/color.directive';
-import { SoumitBaseService } from 'src/app/services/soumitbaseservice';
 import { SoumitService } from 'src/app/services/soumit.service';
 import { FormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -13,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
+import { SoumitBaseService } from 'src/app/services/soumitbaseservice';
 
 const productRoutes: Routes = [{ path: '', component: ProductComponent }];
 @NgModule({
@@ -30,5 +30,6 @@ const productRoutes: Routes = [{ path: '', component: ProductComponent }];
     RouterModule.forChild(productRoutes),
   ],
   providers: [{ provide: SoumitBaseService, useClass: SoumitService }],
+  //providers: [SoumitService],
 })
 export class ProductModule {}

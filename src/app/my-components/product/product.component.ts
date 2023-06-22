@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
-import { SoumitService } from 'src/app/services/soumit.service';
+import { SoumitBaseService } from 'src/app/services/soumitbaseservice';
 
 @Component({
   selector: 'app-product',
@@ -16,7 +16,7 @@ export class ProductComponent implements OnInit {
   config: object = {};
   data: any;
   when: Date | null = new Date();
-  constructor(private _soumitBService: SoumitService) {}
+  constructor(private _soumitBService: SoumitBaseService) {}
   ngOnInit(): void {}
 
   display() {
