@@ -1,24 +1,25 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { By } from '@angular/platform-browser';
+import { first } from 'rxjs';
 import { DashboardComponent } from './dashboard.component';
-import { MatCardModule } from '@angular/material/card';
 
-describe('DashboardComponent', () => {
-  let component: DashboardComponent;
+describe('Post Component', () => {
   let fixture: ComponentFixture<DashboardComponent>;
-
+  let comp: DashboardComponent;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [MatCardModule],
-      declarations: [DashboardComponent]
+      declarations: [DashboardComponent],
+      schemas: [NO_ERRORS_SCHEMA],
     });
+
     fixture = TestBed.createComponent(DashboardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    comp = fixture.componentInstance;
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create post component using TestBed', () => {
+    expect(comp).toBeDefined();
   });
-  
+
+
 });

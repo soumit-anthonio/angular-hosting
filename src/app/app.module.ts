@@ -30,6 +30,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ProductModule } from './my-components/product/product.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { PostComponent } from './components/post/post.component';
 // import { SoumitBaseService } from './services/soumitbaseservice';
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { MatMenuModule } from '@angular/material/menu';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatMenuModule,
     MatCardModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    //provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideDatabase(() => getDatabase()),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

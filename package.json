@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "test": "cls && ng test",
     "build-prod": "ng build --aot --build-optimizer=true ",
     "watch": "ng build --watch --configuration development",
     "host-project": "ng build --output-path docs --base-href angular-hosting"
